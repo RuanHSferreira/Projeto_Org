@@ -1,6 +1,4 @@
-ADSEF-INSS-03-2025.pdf
-EDER-T1.pdf
-EDER-T2.pdf
+*.pdf
 TestesBancoDados.py
 TestesRegex.py
 TestesHash.py
