@@ -5,3 +5,4 @@ TestesHash.py
 TestesGetJson.py
 gitignore
 PROJETO_ORG/
+__pycache__/
