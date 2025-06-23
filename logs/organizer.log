@@ -6,3 +6,4 @@
 2025-06-20 14:51:15,229 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\ADSEF-INSS-03-2025.pdf: __init__() should return None, not 'dict'
 2025-06-20 14:52:57,278 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\ADSEF-INSS-03-2025.pdf: [Errno 13] Permission denied: 'C:\\Users\\Usuario\\Desktop\\EMPRESAS\\Projeto_Org\\pasta_entrada\\ADSEF-INSS-03-2025.pdf'
 2025-06-20 16:55:18,713 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\EDER-T2.pdf: 'dict' object has no attribute 'cnpj'
+2025-06-20 16:57:06,881 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\EDER-T1.pdf: 'cnpj'
