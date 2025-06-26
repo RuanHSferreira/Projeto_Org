@@ -5,7 +5,7 @@ from watchdog.events import FileSystemEventHandler
 from pathlib import Path
 from core import PDFProcessor, DatabaseManager, FileManager
 from core.models import Empresa, GuiaMetadados
-import config
+from config import config
 import json
 
 # Configuração de logging
@@ -21,13 +21,20 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 class PDFHandler(FileSystemEventHandler):
-    def __init__(self, config):
+    def __init__(self, config) -> None:
         self.config = config
         self.pdf_processor = PDFProcessor
-        #self.file_manager = FileManager(config)
-        #self.empresas = self.carregar_empresas()
+        self.file_manager = FileManager.FileManager(config)
+        self.empresas = self.carregar_empresas()
+        self.check_initial()
         return None
     
+    # Função para verificar a pasta quando inicio o programa
+    def check_initial(self):
+        if self.config.PASTA_CONTEUDO:
+            for i in self.config.PASTA_CONTEUDO:
+                self.processar_pdf(Path(self.config.PASTA_ENTRADA / i))
+
     def carregar_empresas(self) -> dict:
         with open(self.config.EMPRESAS_JSON, 'r') as f:
             dados = json.load(f)
@@ -42,33 +49,28 @@ class PDFHandler(FileSystemEventHandler):
         try:
             # Etapa 1: Extrair metadados do PDF
             metadados = self.pdf_processor.PDFProcessor(str(caminho_pdf)).dados
-            print(metadados)
 
             # Etapa 2: Identificar empresa
-            empresa = self.identificar_empresa(metadados['cnpj'])
-            if not empresa:
+            # empresa = self.identificar_empresa(metadados['CNPJ'])
+            #print(empresa.cnpj)
+            if not self.empresas.get(metadados.cnpj):
                 self.file_manager.mover_para_conflitos(caminho_pdf, "EMPRESA_NAO_REGISTRADA")
                 return
             
+            # Limpas caracteres indesejaveis
+            self._cnpj_limp = self.empresas.get(metadados.cnpj).cnpj.replace(".", "_").replace("/", "_")
+
             # # Etapa 3: Gerenciar banco de dados da empresa
-            # db_path = self.config.PASTA_DB_EMPRESAS / f"{empresa.cnpj}.db"
-            # db_manager = DatabaseManager(db_path)
-            
+            self._db_path = self.config.PASTA_DB_EMPRESAS / f"{self._cnpj_limp}.db"
+            self._db_manager = DatabaseManager.DatabaseManager(self._db_path)
+            print(self._db_manager.get_all_guias())
+            #print(metadados)
             # # Etapa 4: Verificar duplicatas/recalculadas
             # self.verificar_e_processar(caminho_pdf, metadados, empresa, db_manager)
             
         except Exception as e:
             logger.error(f"Erro processando {caminho_pdf}: {str(e)}")
             #self.file_manager.mover_para_conflitos(caminho_pdf, "ERRO_PROCESSAMENTO")
-    
-    def identificar_empresa(self, cnpj: str) -> Empresa:
-        # Lógica para encontrar empresa mesmo com mudança de razão social
-        cnpj_limpo = ''.join(filter(str.isdigit, cnpj))
-
-        with open(config.EMPRESAS_JSON, "r", encoding="utf-8")as file:
-            self._dados = json.load(file)
-    
-        return self._dados.get(cnpj_limpo)
     
     def verificar_e_processar(self, caminho_pdf: Path, metadados: GuiaMetadados, 
                             empresa: Empresa, db_manager: DatabaseManager):

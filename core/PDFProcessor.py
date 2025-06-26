@@ -1,24 +1,23 @@
 import re
 from unidecode import unidecode
 import PyPDF2
+from .models import GuiaMetadados
 import os
 import json
 
-
-def extrair_metadados():
-    pass
 
 
 class PDFProcessor:
 
     def __init__(self, caminho):
+        self._caminho = caminho
         with open(caminho, 'rb') as file:
             self._reader = PyPDF2.PdfReader(file)
             self._texto = self._reader.pages[0].extract_text()
 
         self.tipo_doc = re.search(r"Documento de Arrecadação\n(.*)", self._texto).group(1)
         if self.tipo_doc == "de Receitas Federais" or self.tipo_doc == "do eSocial":
-            self.dados = self._extrair_pdf_inss()
+            self.dados: GuiaMetadados = self._extrair_pdf_inss()
 
 
     def _normalizar_raz_social(self):
@@ -28,7 +27,7 @@ class PDFProcessor:
         return re.sub(r'\s+', ' ', lp).strip()
 
     # Exemplo de extração de dados do PDF - INSS
-    def _extrair_pdf_inss(self):
+    def _extrair_pdf_inss(self) -> GuiaMetadados:
         '''
         Returns
             cnpj, Razao Social, MesRef, CodigoGuia, Recalculada
@@ -42,6 +41,7 @@ class PDFProcessor:
         vencimento_up = re.search(r"(\S+)Observações", self._texto).group(1)
         vencimento_down = re.search(r"Pagar até: (\S+)", self._texto).group(1)
         vencimento = vencimento_up if vencimento_up == vencimento_down else None
+        valor = re.search(r'Valor:\s*(\d+,\d{1,2})', self._texto).group(1)
         
         if comp_venc == None:
             '''
@@ -57,11 +57,19 @@ class PDFProcessor:
             vencimento_original = comp_venc.group(2)
         
         recalculado = 'Sim' if vencimento != vencimento_original else 'Nao'
-        return {
-            'CNPJ': cnpj,
-            'Razao Social': self._normalizar_raz_social(),
-            'MesRef': competencia,
-            'CodigoGuia': cod_ident_documento,
-            'Recalculada': recalculado
-        }
+        # return {
+        #     'CNPJ': cnpj,
+        #     'Razao Social': self._normalizar_raz_social(),
+        #     'MesRef': competencia,
+        #     'CodigoGuia': cod_ident_documento,
+        #     'Recalculada': recalculado,
+        #     'Valor': valor
+        # }
+        return GuiaMetadados(cnpj,
+                             competencia,
+                             vencimento,
+                             vencimento_original,
+                             valor,
+                             cod_ident_documento,
+                             self._caminho)
 

@@ -1,9 +1,54 @@
-2025-06-20 14:44:35,114 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\EDER-T1.pdf: __init__() should return None, not 'dict'
-2025-06-20 14:45:37,497 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\ADSEF-INSS-03-2025.pdf: __init__() should return None, not 'dict'
-2025-06-20 14:47:24,888 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\EDER-T1.pdf: __init__() should return None, not 'dict'
-2025-06-20 14:47:25,266 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\ADSEF-INSS-03-2025.pdf: __init__() should return None, not 'dict'
-2025-06-20 14:49:43,133 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\ADSEF-INSS-03-2025.pdf: [Errno 13] Permission denied: 'C:\\Users\\Usuario\\Desktop\\EMPRESAS\\Projeto_Org\\pasta_entrada\\ADSEF-INSS-03-2025.pdf'
-2025-06-20 14:51:15,229 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\ADSEF-INSS-03-2025.pdf: __init__() should return None, not 'dict'
-2025-06-20 14:52:57,278 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\ADSEF-INSS-03-2025.pdf: [Errno 13] Permission denied: 'C:\\Users\\Usuario\\Desktop\\EMPRESAS\\Projeto_Org\\pasta_entrada\\ADSEF-INSS-03-2025.pdf'
-2025-06-20 16:55:18,713 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\EDER-T2.pdf: 'dict' object has no attribute 'cnpj'
-2025-06-20 16:57:06,881 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\EDER-T1.pdf: 'cnpj'
+2025-06-25 16:30:05,736 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\EDER-T2.pdf: 'dict' object has no attribute 'cnpj'
+2025-06-25 16:34:13,778 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada: 'PDFHandler' object has no attribute 'pdf_processor'
+2025-06-25 16:35:25,842 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada: [Errno 13] Permission denied: 'C:\\Users\\Usuario\\Desktop\\EMPRESAS\\Projeto_Org\\pasta_entrada'
+2025-06-25 16:36:00,674 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada: [Errno 13] Permission denied: 'C:\\Users\\Usuario\\Desktop\\EMPRESAS\\Projeto_Org\\pasta_entrada'
+2025-06-25 16:37:26,382 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada: [Errno 13] Permission denied: 'C:\\Users\\Usuario\\Desktop\\EMPRESAS\\Projeto_Org\\pasta_entrada'
+2025-06-25 16:40:57,248 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada: [Errno 13] Permission denied: 'C:\\Users\\Usuario\\Desktop\\EMPRESAS\\Projeto_Org\\pasta_entrada'
+2025-06-25 16:41:42,414 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada: [Errno 13] Permission denied: 'C:\\Users\\Usuario\\Desktop\\EMPRESAS\\Projeto_Org\\pasta_entrada'
+2025-06-25 16:45:26,135 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada: [Errno 13] Permission denied: 'C:\\Users\\Usuario\\Desktop\\EMPRESAS\\Projeto_Org\\pasta_entrada'
+2025-06-25 16:46:57,244 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada: [Errno 13] Permission denied: 'C:\\Users\\Usuario\\Desktop\\EMPRESAS\\Projeto_Org\\pasta_entrada'
+2025-06-25 16:47:21,182 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada: [Errno 13] Permission denied: 'C:\\Users\\Usuario\\Desktop\\EMPRESAS\\Projeto_Org\\pasta_entrada'
+2025-06-25 16:50:18,145 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada: [Errno 13] Permission denied: 'C:\\Users\\Usuario\\Desktop\\EMPRESAS\\Projeto_Org\\pasta_entrada'
+2025-06-25 16:51:04,540 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada: [Errno 13] Permission denied: 'C:\\Users\\Usuario\\Desktop\\EMPRESAS\\Projeto_Org\\pasta_entrada'
+2025-06-26 15:34:22,202 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\ADSEF-INSS-03-2025.pdf: 'dict' object has no attribute 'cnpj'
+2025-06-26 15:34:22,348 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\EDER-T1.pdf: 'dict' object has no attribute 'cnpj'
+2025-06-26 15:34:22,497 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\EDER-T2.pdf: 'dict' object has no attribute 'cnpj'
+2025-06-26 15:58:31,614 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 15:58:31,773 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 15:58:32,029 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 16:05:02,296 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 16:05:02,322 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\ADSEF-INSS-03-2025.pdf: 'dict' object has no attribute 'competencia'
+2025-06-26 16:05:02,602 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 16:05:02,624 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\EDER-T1.pdf: 'dict' object has no attribute 'competencia'
+2025-06-26 16:05:02,786 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 16:05:02,801 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\EDER-T2.pdf: 'dict' object has no attribute 'competencia'
+2025-06-26 16:05:44,914 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 16:05:45,086 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 16:05:45,296 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 16:28:54,129 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\ADSEF-INSS-03-2025.pdf: 'PDFProcessor' object has no attribute '_caminho'
+2025-06-26 16:29:20,598 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\ADSEF-INSS-03-2025.pdf: 'PDFProcessor' object has no attribute 'cnpj'
+2025-06-26 16:30:36,426 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\ADSEF-INSS-03-2025.pdf: 'PDFProcessor' object has no attribute 'cnpj'
+2025-06-26 16:32:16,301 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\ADSEF-INSS-03-2025.pdf: 'PDFProcessor' object has no attribute 'cnpj'
+2025-06-26 16:32:41,891 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\ADSEF-INSS-03-2025.pdf: 'PDFProcessor' object has no attribute 'cnpj'
+2025-06-26 16:33:50,278 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\ADSEF-INSS-03-2025.pdf: 'GuiaMetadados' object is not subscriptable
+2025-06-26 16:34:50,817 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 16:38:14,379 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 16:38:14,379 - core.DatabaseManager.DatabaseManager - INFO - Guia inserida: 07.16.25142.9220155-1 - 03/2025
+2025-06-26 17:01:34,491 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 17:01:34,493 - core.DatabaseManager.DatabaseManager - WARNING - Guia já existe no banco de dados: UNIQUE constraint failed: guias.caminho_arquivo
+2025-06-26 17:06:55,498 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 17:06:55,506 - core.DatabaseManager.DatabaseManager - INFO - Guia inserida: 07.16.25142.9220155-1 - 03/2025
+2025-06-26 17:15:47,905 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 17:15:47,906 - core.DatabaseManager.DatabaseManager - ERROR - Erro ao inserir guia: 5 values for 6 columns
+2025-06-26 17:16:14,615 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 17:16:14,616 - core.DatabaseManager.DatabaseManager - WARNING - Guia já existe no banco de dados: UNIQUE constraint failed: guias.caminho_arquivo
+2025-06-26 17:16:27,126 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 17:16:27,139 - core.DatabaseManager.DatabaseManager - INFO - Guia inserida: 07.16.25142.9220155-1 - 03/2025
+2025-06-26 17:20:16,833 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 17:20:16,842 - core.DatabaseManager.DatabaseManager - INFO - Guia inserida: 07.16.25142.9220155-1 - 03/2025
+2025-06-26 17:23:15,578 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 17:23:15,581 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\ADSEF-INSS-03-2025.pdf: GuiaMetadados.__init__() missing 1 required positional argument: 'caminho_arquivo'
+2025-06-26 17:24:31,426 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 17:25:50,957 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
+2025-06-26 17:25:50,957 - __main__ - ERROR - Erro processando C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\pasta_entrada\ADSEF-INSS-03-2025.pdf: GuiaMetadados.__init__() missing 1 required positional argument: 'caminho_arquivo'
+2025-06-26 17:28:18,085 - core.DatabaseManager.DatabaseManager - INFO - Banco de dados inicializado: C:\Users\Usuario\Desktop\EMPRESAS\Projeto_Org\data\Metadados\20_919_618_0001-67.db
