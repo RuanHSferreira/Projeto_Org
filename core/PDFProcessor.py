@@ -6,6 +6,10 @@ import os
 import json
 
 
+guia_tipo = {"de Receitas Federais": "INSS",
+            "GFD - Guia do FGTS Digital": "FGTS",
+            "do eSocial": "eSocial"}
+
 
 class PDFProcessor:
 
@@ -15,9 +19,29 @@ class PDFProcessor:
             self._reader = PyPDF2.PdfReader(file)
             self._texto = self._reader.pages[0].extract_text()
 
-        self.tipo_doc = re.search(r"Documento de Arrecadação\n(.*)", self._texto).group(1)
-        if self.tipo_doc == "de Receitas Federais" or self.tipo_doc == "do eSocial":
+        if "GFD - Guia do FGTS Digital" in self._texto:
+            self.dados = None
+        elif "de Receitas Federais" in self._texto or "do eSocial" in self._texto:
+            self.tipo_doc = re.search(r"Documento de Arrecadação\n(.*)", self._texto).group(1)
             self.dados: GuiaMetadados = self._extrair_pdf_inss()
+        else:
+            self.dados = None
+
+    # Ainda não estou utilizando essa função
+    def _verificar_tipo_guia(self) -> str:
+        """
+        Verifica se nos dados extraidos do PDF contem alguma frase que relaciona
+        ao tipo de guia
+
+        Returns:
+            Str: INSS, FGTS, eSocial ou None
+        """
+        self.__frases = [l.strip() for l in self._texto.splitlines() if l.strip()]
+        for index_frase in self.__frases:
+            self.__check = guia_tipo.get(index_frase)
+            if self.__check:
+                return self.__check
+        return None
 
 
     def _normalizar_raz_social(self):
@@ -32,7 +56,6 @@ class PDFProcessor:
         Returns
             cnpj, Razao Social, MesRef, CodigoGuia, Recalculada
         '''
-        
         # Padrões customizáveis (ajuste conforme seus PDFs)
         cnpj = re.search(r"\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}", self._texto).group()
         self._empresa = re.search(r"\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}\s*(.*)", self._texto).group(1)
@@ -41,7 +64,8 @@ class PDFProcessor:
         vencimento_up = re.search(r"(\S+)Observações", self._texto).group(1)
         vencimento_down = re.search(r"Pagar até: (\S+)", self._texto).group(1)
         vencimento = vencimento_up if vencimento_up == vencimento_down else None
-        valor = re.search(r'Valor:\s*(\d+,\d{1,2})', self._texto).group(1)
+        valor = re.search(r'Valor:\s*([\d.]+,\d{1,2})', self._texto).group(1)
+        # valor = re.search(r'Valor:\s*(\d+,\d{1,2})', self._texto).group(1)
         
         if comp_venc == None:
             '''
