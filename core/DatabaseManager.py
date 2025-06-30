@@ -44,6 +44,7 @@ class DatabaseManager:
             CREATE TABLE IF NOT EXISTS guias (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 competencia TEXT NOT NULL,
+                vencimento_original TEXT NOT NULL,
                 vencimento TEXT NOT NULL,
                 valor REAL NOT NULL,
                 numero_documento TEXT NOT NULL,
@@ -76,10 +77,11 @@ class DatabaseManager:
         try:
             cursor = self.conn.cursor()
             cursor.execute("""
-            INSERT INTO guias (competencia, vencimento, valor, numero_documento, caminho_arquivo, data_processamento)
-            VALUES (?, ?, ?, ?, ?, ?)
+            INSERT INTO guias (competencia, vencimento_original, vencimento, valor, numero_documento, caminho_arquivo, data_processamento)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
             """, (
                 guia.competencia,
+                guia.vencimento_original,
                 guia.vencimento,
                 guia.valor,
                 guia.numero_documento,
@@ -111,7 +113,7 @@ class DatabaseManager:
         try:
             cursor = self.conn.cursor()
             cursor.execute("""
-            SELECT competencia, vencimento, valor, numero_documento, caminho_arquivo, data_processamento
+            SELECT competencia, vencimento_original, vencimento, valor, numero_documento, caminho_arquivo, data_processamento
             FROM guias
             WHERE competencia = ? AND vencimento = ? AND valor = ?
             ORDER BY data_processamento DESC
@@ -120,6 +122,7 @@ class DatabaseManager:
             
             result = cursor.fetchone()
             if result:
+                print(f"Segue o resultado: {result}")
                 return GuiaMetadados(*result)
             return None
             
@@ -132,7 +135,7 @@ class DatabaseManager:
         try:
             cursor = self.conn.cursor()
             cursor.execute("""
-            SELECT competencia, vencimento, valor, numero_documento, caminho_arquivo, data_processamento
+            SELECT competencia, vencimento_original, vencimento, valor, numero_documento, caminho_arquivo, data_processamento
             FROM guias
             ORDER BY data_processamento DESC
             """)
